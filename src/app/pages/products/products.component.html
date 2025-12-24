@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="top">
+    <h1>Products</h1>
+    <a class="back-btn" routerLink="/products/new">+ Create product</a>
+  </div>
+  <p *ngIf="isLoading" class="loading">Loading products...</p>
+
+  <ul *ngIf="!isLoading">
+    <li *ngFor="let product of products" class="card"  [routerLink]="['/products', product.id]">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.price }} €</p>
+    </li>
+  </ul>
+</div>

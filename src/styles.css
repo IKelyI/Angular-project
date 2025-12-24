@@ -93,7 +93,7 @@ button:hover {
   border-radius: 10px;
   transition: ease 0.3s;
   padding: 0.6rem 1.2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: #0a090c;
 }
 
@@ -188,8 +188,89 @@ button:hover {
   align-items: baseline;
 }
 
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .user-card-top:hover {
   background-color: #3b246a80;
+}
+
+.product-page h1 {
+  margin-bottom: 2rem;
+}
+
+.product-form {
+  background-color: #3b246a80;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #decaff;
+}
+
+.product-form input,
+.product-form textarea {
+  background-color: #0a090c;
+  border: 1px solid #decaff40;
+  border-radius: 6px;
+  padding: 0.6rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+  outline: none;
+  border-color: #ffcd29;
+}
+
+.product-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.primary-btn {
+  background-color: #ffcd29;
+  color: #0a090c;
+}
+
+.primary-btn:hover {
+  background-color: #ffe48d;
+}
+
+.danger-btn {
+  background-color: #dc2626;
+}
+
+.danger-btn:hover {
+  background-color: #ef4444;
 }
 
 @media (max-width: 640px) {
@@ -203,5 +284,9 @@ button:hover {
 
   h2 {
     font-size: 1.3rem;
+  }
+
+  .form-row {
+    flex-direction: column;
   }
 }

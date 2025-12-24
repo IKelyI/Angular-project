@@ -1,12 +1,46 @@
 import { Routes } from '@angular/router';
-import { UsersComponent } from './pages/users/users.component';
-import { UserDetailComponent } from './pages/user-detail/user-detail.component';
-import { PostsComponent } from './pages/posts/posts.component';
-import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: UsersComponent },
-  { path: 'users/:id', component: UserDetailComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'posts/:id', component: PostDetailComponent }
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages/users/users.component')
+        .then(m => m.UsersComponent)
+  },
+  {
+    path: 'users/:id',
+    loadComponent: () =>
+      import('./pages/user-detail/user-detail.component')
+        .then(m => m.UserDetailComponent)
+  },
+  {
+    path: 'posts',
+    loadComponent: () =>
+      import('./pages/posts/posts.component')
+        .then(m => m.PostsComponent)
+  },
+  {
+    path: 'posts/:id',
+    loadComponent: () =>
+      import('./pages/post-detail/post-detail.component')
+        .then(m => m.PostDetailComponent)
+  },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('./pages/products/products.component')
+        .then(m => m.ProductsComponent)
+  },
+  {
+    path: 'products/new',
+    loadComponent: () =>
+      import('./pages/product-create/product-create.component')
+        .then(m => m.ProductCreateComponent)
+  },
+  {
+    path: 'products/:id',
+    loadComponent: () =>
+      import('./pages/product-detail/product-detail.component')
+        .then(m => m.ProductDetailComponent)
+  }
 ];

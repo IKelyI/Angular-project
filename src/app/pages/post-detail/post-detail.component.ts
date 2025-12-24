@@ -19,7 +19,7 @@ import { User } from '../../models/user.model';
 export class PostDetailComponent implements OnInit {
   post!: Post;
   comments: Comment[] = [];
-  author!: User;
+  author?: User;
   isLoading = true;
 
   constructor(
