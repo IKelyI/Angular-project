@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Users</h1>
+
+  <p *ngIf="isLoading" class="loading">Loading users...</p>
+
+  <ul *ngIf="!isLoading">
+    <li *ngFor="let user of users" class="card" [routerLink]="['/users', user.id]">
+      <a> {{ user.firstName }} {{ user.lastName }} </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+
+  <section *ngIf="post" class="card user-card-top">
+    <div>
+      <h2 class="post-title">{{ post.title }}</h2>
+
+      <p class="post-body">{{ post.body }}</p>
+
+      <p class="post-author">
+        Author:
+        <a [routerLink]="['/users', post.userId]">
+          {{ author?.firstName }} {{ author?.lastName }}
+        </a>
+      </p>
+    </div>
+    <a class="back-btn" routerLink="/posts">Back</a>
+  </section>
+
+  <div class="comments">
+    <h3>Comments</h3>
+
+    <p *ngIf="isLoading" class="loading">
+      Loading comments...
+    </p>
+
+    <ul *ngIf="!isLoading">
+      <li *ngFor="let comment of comments" class="card comment">
+        <span class="comment-author">
+          {{ comment.user.username }}
+        </span>
+
+        <p class="comment-body">
+          {{ comment.body }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

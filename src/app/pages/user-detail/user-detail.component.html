@@ -1,0 +1,28 @@
+<div class="container">
+  
+
+  <section *ngIf="user" class="card user-card-top">
+    <div>
+      <h2>
+        {{ user.firstName }} {{ user.lastName }}
+      </h2>
+
+      <p class="card-meta">
+        {{ user.email }}
+      </p>
+    </div>
+    <a class="back-btn" routerLink="/">← Back to users</a>
+  </section>
+
+  <h3>User posts</h3>
+
+  <p *ngIf="isLoading" class="loading">Loading posts...</p>
+
+  <ul *ngIf="!isLoading">
+    <li *ngFor="let post of posts" class="card posts"  [routerLink]="['/posts', post.id]">
+      <a>
+        {{ post.title }}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>All posts</h1>
+
+  <p *ngIf="isLoading" class="loading">Loading posts...</p>
+
+  <ul *ngIf="!isLoading">
+    <li *ngFor="let post of posts" class="card" [routerLink]="['/posts', post.id]">
+      <div class="card-header">
+        <h3 class="post-title">
+          <a>
+            {{ post.title }}
+          </a>
+        </h3>
+
+        <p class="card-meta">
+          Author:
+          <a [routerLink]="['/users', post.userId]">
+            {{ getAuthorName(post.userId) }}
+          </a>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
